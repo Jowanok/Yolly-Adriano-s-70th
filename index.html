@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#102b22">
-
 <title>Yolly Adriano | 70th Birthday</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,9 +28,7 @@
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     background: var(--green);
@@ -82,7 +79,6 @@ a {
     text-align: center;
     padding: 120px 22px 75px;
     overflow: hidden;
-
     background:
         linear-gradient(
             180deg,
@@ -151,12 +147,7 @@ h1 {
 .ornament {
     width: 115px;
     height: 1px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        var(--gold),
-        transparent
-    );
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
     margin: 26px auto;
 }
 
@@ -194,11 +185,7 @@ h1 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(
-        135deg,
-        #e5cb8b,
-        #b88e47
-    );
+    background: linear-gradient(135deg, #e5cb8b, #b88e47);
     color: #1c281f;
     border: 0;
     border-radius: 2px;
@@ -221,15 +208,11 @@ h1 {
     transform: none;
 }
 
-.hero .button {
-    margin-top: 28px;
-}
+.hero .button { margin-top: 28px; }
 
 /* GENERAL SECTIONS */
 
-section {
-    padding: 92px 22px;
-}
+section { padding: 92px 22px; }
 
 .wrap {
     max-width: 1080px;
@@ -242,9 +225,7 @@ section {
     max-width: 680px;
 }
 
-.section-heading .eyebrow {
-    color: var(--gold);
-}
+.section-heading .eyebrow { color: var(--gold); }
 
 h2 {
     font: 500 clamp(2.2rem, 5vw, 3.5rem)/1.12 var(--serif);
@@ -252,9 +233,7 @@ h2 {
     margin: 13px 0;
 }
 
-.section-heading p {
-    color: var(--muted);
-}
+.section-heading p { color: var(--muted); }
 
 /* INTRODUCTION */
 
@@ -264,9 +243,7 @@ h2 {
     text-align: center;
 }
 
-.intro h2 {
-    color: #7c6135;
-}
+.intro h2 { color: #7c6135; }
 
 .intro p {
     max-width: 750px;
@@ -278,11 +255,7 @@ h2 {
 /* EVENT DETAILS */
 
 .details {
-    background: linear-gradient(
-        180deg,
-        #153629,
-        #102b22
-    );
+    background: linear-gradient(180deg, #153629, #102b22);
 }
 
 .detail-grid {
@@ -319,9 +292,7 @@ h2 {
 
 /* DRESS CODE */
 
-.dress {
-    background: #0c241c;
-}
+.dress { background: #0c241c; }
 
 .swatches {
     display: flex;
@@ -346,17 +317,9 @@ h2 {
     margin-bottom: 12px;
 }
 
-.brown {
-    background: #8b6b4a;
-}
-
-.beige {
-    background: #e8dcc8;
-}
-
-.white {
-    background: #f8f5ef;
-}
+.brown { background: #8b6b4a; }
+.beige { background: #e8dcc8; }
+.white { background: #f8f5ef; }
 
 .dress-note {
     text-align: center;
@@ -371,11 +334,7 @@ h2 {
     padding: clamp(28px, 5vw, 54px);
     text-align: center;
     background:
-        radial-gradient(
-            ellipse at top,
-            rgba(201,164,92,.12),
-            transparent 65%
-        ),
+        radial-gradient(ellipse at top, rgba(201,164,92,.12), transparent 65%),
         var(--green2);
 }
 
@@ -397,13 +356,9 @@ h2 {
     color: #17251e;
 }
 
-.rsvp-section h2 {
-    color: #7c6135;
-}
+.rsvp-section h2 { color: #7c6135; }
 
-.rsvp-section .section-heading p {
-    color: #6d6a60;
-}
+.rsvp-section .section-heading p { color: #6d6a60; }
 
 .rsvp-box {
     max-width: 700px;
@@ -427,9 +382,7 @@ h2 {
     margin-bottom: 18px;
 }
 
-.field.full {
-    grid-column: 1 / -1;
-}
+.field.full { grid-column: 1 / -1; }
 
 label {
     color: #4d4b42;
@@ -438,9 +391,7 @@ label {
     letter-spacing: .06em;
 }
 
-input,
-select,
-textarea {
+input, select, textarea {
     width: 100%;
     padding: 13px 14px;
     border: 1px solid #d9d1c1;
@@ -450,9 +401,7 @@ textarea {
     font: 400 .95rem var(--sans);
 }
 
-input:focus,
-select:focus,
-textarea:focus {
+input:focus, select:focus, textarea:focus {
     outline: 2px solid rgba(184,142,71,.25);
     border-color: #b88e47;
 }
@@ -531,31 +480,18 @@ footer strong {
 /* MOBILE */
 
 @media (max-width: 720px) {
-    .topbar {
-        padding: 17px 18px;
-    }
-
-    .detail-grid {
-        grid-template-columns: 1fr;
-    }
-
+    .topbar { padding: 17px 18px; }
+    .detail-grid { grid-template-columns: 1fr; }
     .form-grid {
         grid-template-columns: 1fr;
         gap: 0;
     }
-
     .swatch-color {
         width: 90px;
         height: 90px;
     }
-
-    section {
-        padding: 70px 18px;
-    }
-
-    .hero {
-        min-height: 92svh;
-    }
+    section { padding: 70px 18px; }
+    .hero { min-height: 92svh; }
 }
 </style>
 </head>
@@ -573,12 +509,9 @@ footer strong {
 
 <header class="hero">
     <div class="hero-content">
+        <div class="eyebrow">You are cordially invited</div>
 
-        <div class="eyebrow">
-            You are cordially invited
-        </div>
-
-        <h1>Yolly Bears</h1>
+        <h1>Yolly Adriano</h1>
 
         <div class="ornament"></div>
 
@@ -594,32 +527,21 @@ footer strong {
 
         <div class="date-card">
             <strong>December 12, 2026</strong>
-            <span>
-                SATURDAY · 5:00 IN THE EVENING
-            </span>
+            <span>SATURDAY · 5:00 IN THE EVENING</span>
         </div>
 
         <br>
 
-        <a class="button" href="#rsvp">
-            Kindly respond
-        </a>
-
+        <a class="button" href="#rsvp">Kindly respond</a>
     </div>
 </header>
 
 <!-- INTRODUCTION -->
 
 <section class="intro">
-
     <div class="wrap">
-
-        <div class="eyebrow">
-            A special milestone
-        </div>
-
+        <div class="eyebrow">A special milestone</div>
         <h2>Seventy Years of Love</h2>
-
         <div class="ornament"></div>
 
         <p>
@@ -630,33 +552,20 @@ footer strong {
             meaningful. We would be delighted to celebrate
             this special day with you.
         </p>
-
     </div>
-
 </section>
 
 <!-- EVENT DETAILS -->
 
 <section class="details">
-
     <div class="wrap">
-
         <div class="section-heading">
-
-            <div class="eyebrow">
-                Save the date
-            </div>
-
+            <div class="eyebrow">Save the date</div>
             <h2>Event Details</h2>
-
-            <p>
-                An evening of gratitude, laughter, and celebration.
-            </p>
-
+            <p>An evening of gratitude, laughter, and celebration.</p>
         </div>
 
         <div class="detail-grid">
-
             <article class="detail">
                 <div class="label">Date</div>
                 <h3>December 12, 2026</h3>
@@ -674,35 +583,21 @@ footer strong {
                 <h3>Yolly Adriano</h3>
                 <p>Her 70th Birthday</p>
             </article>
-
         </div>
-
     </div>
-
 </section>
 
 <!-- DRESS CODE -->
 
 <section class="dress">
-
     <div class="wrap">
-
         <div class="section-heading">
-
-            <div class="eyebrow">
-                Attire
-            </div>
-
+            <div class="eyebrow">Attire</div>
             <h2>Dress Code</h2>
-
-            <p>
-                Elegant neutral tones are warmly encouraged.
-            </p>
-
+            <p>Elegant neutral tones are warmly encouraged.</p>
         </div>
 
         <div class="swatches">
-
             <div class="swatch">
                 <div class="swatch-color brown"></div>
                 BROWN
@@ -717,31 +612,21 @@ footer strong {
                 <div class="swatch-color white"></div>
                 WHITE
             </div>
-
         </div>
 
         <p class="dress-note">
             Any shade of brown, beige, or white is welcome.
         </p>
-
     </div>
-
 </section>
 
 <!-- VENUE -->
 
 <section>
-
     <div class="wrap">
-
         <div class="venue-panel">
-
-            <div class="eyebrow">
-                Let's celebrate together
-            </div>
-
+            <div class="eyebrow">Let's celebrate together</div>
             <h3>Twinnie Private Resort</h3>
-
             <p>San Jose City, Nueva Ecija</p>
 
             <a
@@ -752,36 +637,24 @@ footer strong {
             >
                 View venue map
             </a>
-
         </div>
-
     </div>
-
 </section>
 
 <!-- RSVP -->
 
 <section class="rsvp-section" id="rsvp">
-
     <div class="wrap">
-
         <div class="section-heading">
-
-            <div class="eyebrow">
-                We hope to see you there
-            </div>
-
+            <div class="eyebrow">We hope to see you there</div>
             <h2>Kindly RSVP</h2>
-
             <p>
                 Please let us know if you can join us
                 by submitting the form below.
             </p>
-
         </div>
 
         <div class="rsvp-box">
-
             <form
                 id="rsvp-form"
                 action="https://script.google.com/macros/s/AKfycbzZyxvLC_mznFo2_PjokwjNAlyKIk2RX5RiUEDU-GaQJjK5IJQLokDJGfWBB4VQQDDw/exec"
@@ -792,10 +665,8 @@ footer strong {
                 <!-- Anti-spam field -->
 
                 <div class="honeypot" aria-hidden="true">
-
                     <label>
                         Leave this field empty
-
                         <input
                             type="text"
                             name="website"
@@ -803,17 +674,11 @@ footer strong {
                             autocomplete="off"
                         >
                     </label>
-
                 </div>
 
                 <div class="form-grid">
-
                     <div class="field full">
-
-                        <label for="guest-name">
-                            FULL NAME *
-                        </label>
-
+                        <label for="guest-name">FULL NAME *</label>
                         <input
                             id="guest-name"
                             name="name"
@@ -822,49 +687,26 @@ footer strong {
                             required
                             placeholder="Enter your full name"
                         >
-
                     </div>
 
                     <div class="field">
-
-                        <label for="attendance">
-                            WILL YOU BE ATTENDING? *
-                        </label>
-
-                        <select
-                            id="attendance"
-                            name="attendance"
-                            required
-                        >
-
+                        <label for="attendance">WILL YOU BE ATTENDING? *</label>
+                        <select id="attendance" name="attendance" required>
                             <option value="" disabled selected>
                                 Please select
                             </option>
-
                             <option value="Attending">
                                 Yes, I'll be there!
                             </option>
-
                             <option value="Not attending">
                                 Sorry, I can't make it
                             </option>
-
                         </select>
-
                     </div>
 
                     <div class="field">
-
-                        <label for="guests">
-                            NUMBER OF PEOPLE ATTENDING *
-                        </label>
-
-                        <select
-                            id="guests"
-                            name="guests"
-                            required
-                        >
-
+                        <label for="guests">NUMBER OF PEOPLE ATTENDING *</label>
+                        <select id="guests" name="guests" required>
                             <option value="1" selected>1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -875,26 +717,18 @@ footer strong {
                             <option value="8">8</option>
                             <option value="9">9</option>
                             <option value="10">10</option>
-
                         </select>
-
                     </div>
 
                     <div class="field full">
-
-                        <label for="message">
-                            MESSAGE (OPTIONAL)
-                        </label>
-
+                        <label for="message">MESSAGE (OPTIONAL)</label>
                         <textarea
                             id="message"
                             name="message"
                             maxlength="500"
                             placeholder="Leave a birthday message for Yolly..."
                         ></textarea>
-
                     </div>
-
                 </div>
 
                 <button
@@ -915,7 +749,6 @@ footer strong {
                     role="status"
                     aria-live="polite"
                 ></div>
-
             </form>
 
             <iframe
@@ -924,17 +757,13 @@ footer strong {
                 title="RSVP submission response"
                 style="display:none"
             ></iframe>
-
         </div>
-
     </div>
-
 </section>
 
 <!-- FOOTER -->
 
 <footer>
-
     <strong>With love, the Adriano Family</strong>
 
     <div>
@@ -944,17 +773,13 @@ footer strong {
     <div class="small" style="margin-top:18px">
         YOLLY ADRIANO · 70TH BIRTHDAY · 2026
     </div>
-
 </footer>
 
 <!-- RSVP JAVASCRIPT -->
 
 <script>
-
 const form = document.getElementById('rsvp-form');
-
 const statusBox = document.getElementById('form-status');
-
 const submitButton = document.getElementById('submit-button');
 
 let waitingForResponse = false;
@@ -970,7 +795,6 @@ form.addEventListener('submit', function(event) {
     waitingForResponse = true;
 
     submitButton.disabled = true;
-
     submitButton.textContent = 'Sending your response...';
 
     statusBox.style.display = 'none';
@@ -978,18 +802,15 @@ form.addEventListener('submit', function(event) {
     responseTimeout = setTimeout(function() {
 
         if (waitingForResponse) {
-
             waitingForResponse = false;
 
             submitButton.disabled = false;
-
             submitButton.textContent = 'Confirm my RSVP';
 
             showStatus(
                 'We could not confirm your submission. Please try again. If you already submitted, check with the organizers before resubmitting.',
                 true
             );
-
         }
 
     }, 30000);
@@ -1016,7 +837,6 @@ window.addEventListener('message', function(event) {
     waitingForResponse = false;
 
     submitButton.disabled = false;
-
     submitButton.textContent = 'Confirm my RSVP';
 
     if (event.data.success === true) {
@@ -1027,7 +847,6 @@ window.addEventListener('message', function(event) {
         );
 
         form.reset();
-
         document.getElementById('guests').value = '1';
 
     } else {
@@ -1046,9 +865,7 @@ window.addEventListener('message', function(event) {
 function showStatus(message, isError) {
 
     statusBox.textContent = message;
-
     statusBox.className = isError ? 'error' : '';
-
     statusBox.style.display = 'block';
 
     statusBox.scrollIntoView({
@@ -1058,17 +875,19 @@ function showStatus(message, isError) {
 
 }
 
-/* Automatically set guest count to zero if not attending */
+/* Handle attendance selection */
 
 document.getElementById('attendance').addEventListener('change', function() {
 
     const guests = document.getElementById('guests');
 
+    // Keep the field enabled so it is always submitted.
+    // Apps Script will record zero guests for non-attending responses.
+
+    guests.disabled = false;
+
     if (this.value === 'Not attending') {
         guests.value = '1';
-        guests.disabled = true;
-    } else {
-        guests.disabled = false;
     }
 
 });
