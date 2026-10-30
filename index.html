@@ -1,275 +1,1079 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yolly Adriano | 70th Birthday Celebration</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102b22">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Yolly Adriano | 70th Birthday</title>
 
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    :root{
-      --black:#070707;
-      --charcoal:#101010;
-      --gold:#d4af37;
-      --gold-light:#f3d77b;
-      --ivory:#f8f5ef;
-      --muted:#c9c2b7;
-      --brown:#8b6b4a;
-      --beige:#e8dcc8;
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --green: #102b22;
+    --green2: #18392d;
+    --gold: #c9a45c;
+    --gold-light: #ead49b;
+    --ivory: #f8f4eb;
+    --muted: #c9c5b8;
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "DM Sans", Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--green);
+    color: var(--ivory);
+    font-family: var(--sans);
+    line-height: 1.65;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* NAVIGATION */
+
+.topbar {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px clamp(20px, 6vw, 80px);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    font-size: .7rem;
+}
+
+.brand {
+    color: var(--gold-light);
+    letter-spacing: .2em;
+}
+
+.topbar a {
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 4px;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 120px 22px 75px;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7,24,18,.40),
+            rgba(7,24,18,.90)
+        ),
+        url("assets/birthday-backdrop.jpg") center/cover no-repeat,
+        radial-gradient(
+            ellipse at 50% 25%,
+            #315b43 0%,
+            var(--green) 68%
+        );
+}
+
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border: 1px solid rgba(220,190,126,.22);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero::before {
+    top: 12%;
+    left: -160px;
+    box-shadow:
+        0 0 0 18px rgba(220,190,126,.025),
+        0 0 0 38px rgba(220,190,126,.025);
+}
+
+.hero::after {
+    bottom: -170px;
+    right: -110px;
+    box-shadow:
+        0 0 0 18px rgba(220,190,126,.025),
+        0 0 0 38px rgba(220,190,126,.025);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 850px;
+    animation: rise 1.1s ease both;
+}
+
+.eyebrow {
+    color: var(--gold-light);
+    text-transform: uppercase;
+    letter-spacing: .32em;
+    font-size: .72rem;
+}
+
+h1 {
+    font: 500 clamp(3.8rem, 11vw, 8rem)/.98 var(--serif);
+    color: var(--gold-light);
+    margin: 24px 0 12px;
+}
+
+.hero-sub {
+    font: 400 clamp(1.1rem, 2.4vw, 1.65rem) var(--serif);
+}
+
+.ornament {
+    width: 115px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        transparent
+    );
+    margin: 26px auto;
+}
+
+.hero-copy {
+    max-width: 620px;
+    margin: auto;
+    color: #e5e0d4;
+    font-size: 1rem;
+}
+
+.date-card {
+    display: inline-block;
+    margin-top: 36px;
+    padding: 18px 34px;
+    border: 1px solid rgba(221,190,125,.25);
+    background: rgba(10,34,25,.58);
+    backdrop-filter: blur(10px);
+}
+
+.date-card strong {
+    display: block;
+    color: var(--gold-light);
+    font: 500 1.55rem var(--serif);
+}
+
+.date-card span {
+    color: var(--muted);
+    font-size: .86rem;
+    letter-spacing: .08em;
+}
+
+/* BUTTONS */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        135deg,
+        #e5cb8b,
+        #b88e47
+    );
+    color: #1c281f;
+    border: 0;
+    border-radius: 2px;
+    padding: 14px 25px;
+    text-transform: uppercase;
+    letter-spacing: .13em;
+    font: 600 .75rem var(--sans);
+    cursor: pointer;
+    transition: transform .2s, filter .2s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.06);
+}
+
+.button:disabled {
+    opacity: .65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.hero .button {
+    margin-top: 28px;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    padding: 92px 22px;
+}
+
+.wrap {
+    max-width: 1080px;
+    margin: auto;
+}
+
+.section-heading {
+    text-align: center;
+    margin: 0 auto 48px;
+    max-width: 680px;
+}
+
+.section-heading .eyebrow {
+    color: var(--gold);
+}
+
+h2 {
+    font: 500 clamp(2.2rem, 5vw, 3.5rem)/1.12 var(--serif);
+    color: var(--gold-light);
+    margin: 13px 0;
+}
+
+.section-heading p {
+    color: var(--muted);
+}
+
+/* INTRODUCTION */
+
+.intro {
+    background: var(--ivory);
+    color: #17251e;
+    text-align: center;
+}
+
+.intro h2 {
+    color: #7c6135;
+}
+
+.intro p {
+    max-width: 750px;
+    margin: auto;
+    color: #5c5b51;
+    font: 1.12rem/2 var(--serif);
+}
+
+/* EVENT DETAILS */
+
+.details {
+    background: linear-gradient(
+        180deg,
+        #153629,
+        #102b22
+    );
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.detail {
+    padding: 30px 24px;
+    text-align: center;
+    border: 1px solid rgba(221,190,125,.25);
+    background: rgba(248,244,235,.055);
+    min-height: 180px;
+}
+
+.detail .label {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font-size: .68rem;
+}
+
+.detail h3 {
+    color: var(--gold-light);
+    font: 500 1.55rem var(--serif);
+    margin: 13px 0 5px;
+}
+
+.detail p {
+    color: var(--muted);
+    font-size: .92rem;
+}
+
+/* DRESS CODE */
+
+.dress {
+    background: #0c241c;
+}
+
+.swatches {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.swatch {
+    text-align: center;
+    color: var(--muted);
+    font-size: .82rem;
+    letter-spacing: .08em;
+}
+
+.swatch-color {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+    margin-bottom: 12px;
+}
+
+.brown {
+    background: #8b6b4a;
+}
+
+.beige {
+    background: #e8dcc8;
+}
+
+.white {
+    background: #f8f5ef;
+}
+
+.dress-note {
+    text-align: center;
+    color: var(--muted);
+    margin-top: 30px;
+}
+
+/* VENUE */
+
+.venue-panel {
+    border: 1px solid rgba(221,190,125,.25);
+    padding: clamp(28px, 5vw, 54px);
+    text-align: center;
+    background:
+        radial-gradient(
+            ellipse at top,
+            rgba(201,164,92,.12),
+            transparent 65%
+        ),
+        var(--green2);
+}
+
+.venue-panel h3 {
+    font: 500 2rem var(--serif);
+    color: var(--gold-light);
+    margin: 10px 0;
+}
+
+.venue-panel p {
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+/* RSVP */
+
+.rsvp-section {
+    background: var(--ivory);
+    color: #17251e;
+}
+
+.rsvp-section h2 {
+    color: #7c6135;
+}
+
+.rsvp-section .section-heading p {
+    color: #6d6a60;
+}
+
+.rsvp-box {
+    max-width: 700px;
+    margin: auto;
+    padding: clamp(24px, 5vw, 48px);
+    border: 1px solid rgba(151,117,58,.3);
+    background: #fffdf8;
+    box-shadow: 0 20px 60px rgba(40,30,15,.08);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 18px;
+}
+
+.field.full {
+    grid-column: 1 / -1;
+}
+
+label {
+    color: #4d4b42;
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d9d1c1;
+    border-radius: 2px;
+    background: white;
+    color: #242820;
+    font: 400 .95rem var(--sans);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid rgba(184,142,71,.25);
+    border-color: #b88e47;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.rsvp-box .button {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.privacy {
+    color: #777266;
+    font-size: .75rem;
+    text-align: center;
+    margin-top: 15px;
+}
+
+#form-status {
+    display: none;
+    margin-top: 18px;
+    padding: 14px;
+    text-align: center;
+    background: #eaf2e9;
+    color: #214b2c;
+}
+
+#form-status.error {
+    background: #f8e9e5;
+    color: #8b2e20;
+}
+
+.honeypot {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 55px 20px;
+    text-align: center;
+    background: #091d16;
+    color: var(--muted);
+}
+
+footer strong {
+    display: block;
+    color: var(--gold-light);
+    font: 500 1.8rem var(--serif);
+    margin-bottom: 8px;
+}
+
+.small {
+    font-size: .75rem;
+    letter-spacing: .08em;
+}
+
+/* ANIMATIONS */
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
     }
-    body{
-      font-family:'Inter',sans-serif;
-      background:linear-gradient(180deg,#050505,#0d0d0d);
-      color:#f5f2ec;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-    header{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:40px 20px;
-      background:
-        radial-gradient(circle at top, rgba(212,175,55,.15), transparent 40%),
-        linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.9));
+}
+
+/* MOBILE */
+
+@media (max-width: 720px) {
+    .topbar {
+        padding: 17px 18px;
     }
-    .hero{ max-width:900px; }
-    .tag{
-      color:var(--gold);
-      letter-spacing:6px;
-      text-transform:uppercase;
-      margin-bottom:18px;
-      font-size:.9rem;
+
+    .detail-grid {
+        grid-template-columns: 1fr;
     }
-    h1{
-      font-family:'Playfair Display',serif;
-      font-size:clamp(3rem,7vw,5.8rem);
-      color:var(--gold-light);
-      line-height:1.05;
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
     }
-    .line{
-      width:120px;height:2px;
-      background:linear-gradient(90deg,transparent,var(--gold),transparent);
-      margin:22px auto;
+
+    .swatch-color {
+        width: 90px;
+        height: 90px;
     }
-    .subtitle{
-      color:var(--muted);
-      font-size:1.15rem;
-      line-height:1.8;
-      max-width:720px;
-      margin:0 auto;
+
+    section {
+        padding: 70px 18px;
     }
-    .hero-card{
-      display:inline-block;
-      margin-top:46px;
-      padding:28px 34px;
-      border:1px solid rgba(212,175,55,.25);
-      border-radius:24px;
-      background:rgba(255,255,255,.04);
-      backdrop-filter:blur(12px);
+
+    .hero {
+        min-height: 92svh;
     }
-    .hero-card h2{
-      color:var(--gold);
-      font-family:'Playfair Display',serif;
-      margin-bottom:10px;
-    }
-    section{
-      max-width:1100px;
-      margin:0 auto;
-      padding:90px 24px;
-    }
-    .title{
-      text-align:center;
-      margin-bottom:50px;
-    }
-    .title h2{
-      font-family:'Playfair Display',serif;
-      color:var(--gold-light);
-      font-size:2.4rem;
-      margin-bottom:10px;
-    }
-    .title p{ color:var(--muted); }
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:24px;
-    }
-    .card{
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(212,175,55,.18);
-      border-radius:22px;
-      padding:30px;
-    }
-    .card h3{
-      color:var(--gold);
-      font-family:'Playfair Display',serif;
-      margin-bottom:12px;
-    }
-    .card p{ color:#f5f2ec; line-height:1.8; }
-    .palette{
-      display:flex;
-      justify-content:center;
-      gap:22px;
-      flex-wrap:wrap;
-      margin-top:34px;
-    }
-    .swatch{
-      width:130px;height:130px;
-      border-radius:18px;
-      border:2px solid rgba(212,175,55,.3);
-      margin-bottom:10px;
-    }
-    .brown{ background:#8b6b4a; }
-    .beige{ background:#e8dcc8; }
-    .white{ background:#f8f5ef; }
-    .venue{
-      background:linear-gradient(135deg, rgba(212,175,55,.08), rgba(255,255,255,.02));
-      border:1px solid rgba(212,175,55,.2);
-      border-radius:28px;
-      padding:40px;
-      text-align:center;
-    }
-    .venue h3{
-      color:var(--gold-light);
-      font-family:'Playfair Display',serif;
-      font-size:2rem;
-      margin-bottom:14px;
-    }
-    .venue p{
-      color:var(--muted);
-      line-height:1.8;
-      margin-bottom:22px;
-    }
-    .btn{
-      display:inline-block;
-      padding:15px 34px;
-      border-radius:999px;
-      background:linear-gradient(135deg,var(--gold),var(--gold-light));
-      color:#111;
-      text-decoration:none;
-      font-weight:700;
-    }
-    footer{
-      text-align:center;
-      padding:60px 24px 80px;
-      color:var(--muted);
-      border-top:1px solid rgba(212,175,55,.12);
-    }
-    footer h3{
-      color:var(--gold);
-      font-family:'Playfair Display',serif;
-      margin-bottom:12px;
-    }
-  </style>
+}
+</style>
 </head>
+
 <body>
 
-<header>
-  <div class="hero">
-    <div class="tag">You are cordially invited</div>
-    <h1>Yolly Adriano</h1>
-    <div class="line"></div>
-    <p class="subtitle">
-      Join us for an elegant evening as we celebrate a remarkable milestone —
-      the <strong>70th Birthday Celebration</strong> of a beloved mother,
-      grandmother, and cherished friend.
-    </p>
+<!-- NAVIGATION -->
 
-    <div class="hero-card">
-      <h2>December 12, 2026</h2>
-      <p>Saturday • 5:00 PM</p>
-      <p>San Jose City, Nueva Ecija</p>
+<nav class="topbar">
+    <span class="brand">The Adriano Family</span>
+    <a href="#rsvp">RSVP</a>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            You are cordially invited
+        </div>
+
+        <h1>Yolly Bears</h1>
+
+        <div class="ornament"></div>
+
+        <div class="hero-sub">
+            A Celebration of 70 Wonderful Years
+        </div>
+
+        <p class="hero-copy">
+            With grateful hearts, join us as we honor
+            a beloved mother and grandmother and celebrate
+            seven decades of love, wisdom, and beautiful memories.
+        </p>
+
+        <div class="date-card">
+            <strong>December 12, 2026</strong>
+            <span>
+                SATURDAY · 5:00 IN THE EVENING
+            </span>
+        </div>
+
+        <br>
+
+        <a class="button" href="#rsvp">
+            Kindly respond
+        </a>
+
     </div>
-  </div>
 </header>
 
+<!-- INTRODUCTION -->
+
+<section class="intro">
+
+    <div class="wrap">
+
+        <div class="eyebrow">
+            A special milestone
+        </div>
+
+        <h2>Seventy Years of Love</h2>
+
+        <div class="ornament"></div>
+
+        <p>
+            Some moments become treasured memories because
+            they are shared with the people we love.
+
+            Your presence will make this milestone even more
+            meaningful. We would be delighted to celebrate
+            this special day with you.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- EVENT DETAILS -->
+
+<section class="details">
+
+    <div class="wrap">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                Save the date
+            </div>
+
+            <h2>Event Details</h2>
+
+            <p>
+                An evening of gratitude, laughter, and celebration.
+            </p>
+
+        </div>
+
+        <div class="detail-grid">
+
+            <article class="detail">
+                <div class="label">Date</div>
+                <h3>December 12, 2026</h3>
+                <p>Saturday</p>
+            </article>
+
+            <article class="detail">
+                <div class="label">Time</div>
+                <h3>5:00 PM</h3>
+                <p>Reception begins promptly</p>
+            </article>
+
+            <article class="detail">
+                <div class="label">Celebrating</div>
+                <h3>Yolly Adriano</h3>
+                <p>Her 70th Birthday</p>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- DRESS CODE -->
+
+<section class="dress">
+
+    <div class="wrap">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                Attire
+            </div>
+
+            <h2>Dress Code</h2>
+
+            <p>
+                Elegant neutral tones are warmly encouraged.
+            </p>
+
+        </div>
+
+        <div class="swatches">
+
+            <div class="swatch">
+                <div class="swatch-color brown"></div>
+                BROWN
+            </div>
+
+            <div class="swatch">
+                <div class="swatch-color beige"></div>
+                BEIGE
+            </div>
+
+            <div class="swatch">
+                <div class="swatch-color white"></div>
+                WHITE
+            </div>
+
+        </div>
+
+        <p class="dress-note">
+            Any shade of brown, beige, or white is welcome.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- VENUE -->
+
 <section>
-  <div class="title">
-    <h2>Event details</h2>
-    <p>An evening of gratitude, love, laughter, and celebration</p>
-  </div>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Date</h3>
-      <p>Saturday</p>
-      <p><strong>December 12, 2026</strong></p>
+    <div class="wrap">
+
+        <div class="venue-panel">
+
+            <div class="eyebrow">
+                Let's celebrate together
+            </div>
+
+            <h3>Twinnie Private Resort</h3>
+
+            <p>San Jose City, Nueva Ecija</p>
+
+            <a
+                class="button"
+                href="https://www.google.com/maps/search/?api=1&query=QW7W%2BPR+San+Jose+City,+Nueva+Ecija"
+                target="_blank"
+                rel="noopener"
+            >
+                View venue map
+            </a>
+
+        </div>
+
     </div>
 
-    <div class="card">
-      <h3>Time</h3>
-      <p>Reception begins promptly at</p>
-      <p><strong>5:00 PM</strong></p>
-    </div>
-
-    <div class="card">
-      <h3>Occasion</h3>
-      <p><strong>70th Birthday Celebration</strong></p>
-      <p>Honoring Yolly Adriano</p>
-    </div>
-  </div>
 </section>
 
-<section style="text-align:center;">
-  <div class="title">
-    <h2>Dress code</h2>
-    <p>Please join us in these elegant neutral tones</p>
-  </div>
+<!-- RSVP -->
 
-  <div class="palette">
-    <div>
-      <div class="swatch brown"></div>
-      <p>Brown</p>
-    </div>
-    <div>
-      <div class="swatch beige"></div>
-      <p>Beige</p>
-    </div>
-    <div>
-      <div class="swatch white"></div>
-      <p>White</p>
-    </div>
-  </div>
+<section class="rsvp-section" id="rsvp">
 
-  <p style="margin-top:28px;color:var(--muted);">
-    Any shade of <strong>brown, beige, or white</strong> is warmly encouraged.
-  </p>
+    <div class="wrap">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                We hope to see you there
+            </div>
+
+            <h2>Kindly RSVP</h2>
+
+            <p>
+                Please let us know if you can join us
+                by submitting the form below.
+            </p>
+
+        </div>
+
+        <div class="rsvp-box">
+
+            <form
+                id="rsvp-form"
+                action="https://script.google.com/macros/s/AKfycbzZyxvLC_mznFo2_PjokwjNAlyKIk2RX5RiUEDU-GaQJjK5IJQLokDJGfWBB4VQQDDw/exec"
+                method="POST"
+                target="rsvp-response-frame"
+            >
+
+                <!-- Anti-spam field -->
+
+                <div class="honeypot" aria-hidden="true">
+
+                    <label>
+                        Leave this field empty
+
+                        <input
+                            type="text"
+                            name="website"
+                            tabindex="-1"
+                            autocomplete="off"
+                        >
+                    </label>
+
+                </div>
+
+                <div class="form-grid">
+
+                    <div class="field full">
+
+                        <label for="guest-name">
+                            FULL NAME *
+                        </label>
+
+                        <input
+                            id="guest-name"
+                            name="name"
+                            type="text"
+                            maxlength="100"
+                            required
+                            placeholder="Enter your full name"
+                        >
+
+                    </div>
+
+                    <div class="field">
+
+                        <label for="attendance">
+                            WILL YOU BE ATTENDING? *
+                        </label>
+
+                        <select
+                            id="attendance"
+                            name="attendance"
+                            required
+                        >
+
+                            <option value="" disabled selected>
+                                Please select
+                            </option>
+
+                            <option value="Attending">
+                                Yes, I'll be there!
+                            </option>
+
+                            <option value="Not attending">
+                                Sorry, I can't make it
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="field">
+
+                        <label for="guests">
+                            NUMBER OF PEOPLE ATTENDING *
+                        </label>
+
+                        <select
+                            id="guests"
+                            name="guests"
+                            required
+                        >
+
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="field full">
+
+                        <label for="message">
+                            MESSAGE (OPTIONAL)
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            maxlength="500"
+                            placeholder="Leave a birthday message for Yolly..."
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+                <button
+                    class="button"
+                    id="submit-button"
+                    type="submit"
+                >
+                    Confirm my RSVP
+                </button>
+
+                <p class="privacy">
+                    Your response will be shared privately
+                    with the event organizers.
+                </p>
+
+                <div
+                    id="form-status"
+                    role="status"
+                    aria-live="polite"
+                ></div>
+
+            </form>
+
+            <iframe
+                name="rsvp-response-frame"
+                id="rsvp-response-frame"
+                title="RSVP submission response"
+                style="display:none"
+            ></iframe>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section>
-  <div class="venue">
-    <h3>Venue</h3>
-    <p><strong>Twinnie Private Resort</strong></p>
-    <p>
-      For your convenience, we have included the Google Maps location below
-      so you can easily find the venue.
-    </p>
-
-    <a class="btn"
-       href="https://www.google.com/maps/search/?api=1&query=QW7W%2BPR+San+Jose+City,+Nueva+Ecija"
-       target="_blank">
-      Open Google Maps
-    </a>
-  </div>
-</section>
-
-<section style="text-align:center;">
-  <div class="title">
-    <h2>We would love to celebrate with you</h2>
-    <p>Your presence will make this milestone celebration even more meaningful.</p>
-  </div>
-
-  <a class="btn" href="#">RSVP</a>
-</section>
+<!-- FOOTER -->
 
 <footer>
-  <h3>With love, the Adriano family</h3>
-  <p>Thank you for being part of this special celebration.</p>
+
+    <strong>With love, the Adriano Family</strong>
+
+    <div>
+        Thank you for being part of this special celebration.
+    </div>
+
+    <div class="small" style="margin-top:18px">
+        YOLLY ADRIANO · 70TH BIRTHDAY · 2026
+    </div>
+
 </footer>
+
+<!-- RSVP JAVASCRIPT -->
+
+<script>
+
+const form = document.getElementById('rsvp-form');
+
+const statusBox = document.getElementById('form-status');
+
+const submitButton = document.getElementById('submit-button');
+
+let waitingForResponse = false;
+let responseTimeout;
+
+form.addEventListener('submit', function(event) {
+
+    if (waitingForResponse) {
+        event.preventDefault();
+        return;
+    }
+
+    waitingForResponse = true;
+
+    submitButton.disabled = true;
+
+    submitButton.textContent = 'Sending your response...';
+
+    statusBox.style.display = 'none';
+
+    responseTimeout = setTimeout(function() {
+
+        if (waitingForResponse) {
+
+            waitingForResponse = false;
+
+            submitButton.disabled = false;
+
+            submitButton.textContent = 'Confirm my RSVP';
+
+            showStatus(
+                'We could not confirm your submission. Please try again. If you already submitted, check with the organizers before resubmitting.',
+                true
+            );
+
+        }
+
+    }, 30000);
+
+});
+
+/* Receive confirmation from Google Apps Script */
+
+window.addEventListener('message', function(event) {
+
+    if (
+        !event.data ||
+        event.data.type !== 'YOLLY_RSVP_RESULT'
+    ) {
+        return;
+    }
+
+    if (!waitingForResponse) {
+        return;
+    }
+
+    clearTimeout(responseTimeout);
+
+    waitingForResponse = false;
+
+    submitButton.disabled = false;
+
+    submitButton.textContent = 'Confirm my RSVP';
+
+    if (event.data.success === true) {
+
+        showStatus(
+            'Thank you! Your RSVP has been received. We look forward to celebrating with you!',
+            false
+        );
+
+        form.reset();
+
+        document.getElementById('guests').value = '1';
+
+    } else {
+
+        showStatus(
+            'Something went wrong while saving your RSVP. Please try again or contact the event organizers.',
+            true
+        );
+
+    }
+
+});
+
+/* Display form messages */
+
+function showStatus(message, isError) {
+
+    statusBox.textContent = message;
+
+    statusBox.className = isError ? 'error' : '';
+
+    statusBox.style.display = 'block';
+
+    statusBox.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+    });
+
+}
+
+/* Automatically set guest count to zero if not attending */
+
+document.getElementById('attendance').addEventListener('change', function() {
+
+    const guests = document.getElementById('guests');
+
+    if (this.value === 'Not attending') {
+        guests.value = '1';
+        guests.disabled = true;
+    } else {
+        guests.disabled = false;
+    }
+
+});
+
+</script>
 
 </body>
 </html>
