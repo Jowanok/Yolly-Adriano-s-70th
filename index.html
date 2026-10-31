@@ -659,7 +659,6 @@ footer strong {
                 id="rsvp-form"
                 action="https://script.google.com/macros/s/AKfycbzZyxvLC_mznFo2_PjokwjNAlyKIk2RX5RiUEDU-GaQJjK5IJQLokDJGfWBB4VQQDDw/exec"
                 method="POST"
-                target="rsvp-response-frame"
             >
 
                 <!-- Anti-spam field -->
@@ -750,13 +749,6 @@ footer strong {
                     aria-live="polite"
                 ></div>
             </form>
-
-            <iframe
-                name="rsvp-response-frame"
-                id="rsvp-response-frame"
-                title="RSVP submission response"
-                style="display:none"
-            ></iframe>
         </div>
     </div>
 </section>
@@ -764,7 +756,7 @@ footer strong {
 <!-- FOOTER -->
 
 <footer>
-    <strong>With love, the Adriano Family</strong>
+    <strong>With love, Adriano Family</strong>
 
     <div>
         Thank you for being part of this special celebration.
@@ -782,64 +774,37 @@ const form = document.getElementById('rsvp-form');
 const statusBox = document.getElementById('form-status');
 const submitButton = document.getElementById('submit-button');
 
-let waitingForResponse = false;
-let responseTimeout;
+let isSubmitting = false;
 
-form.addEventListener('submit', function(event) {
+form.addEventListener('submit', async function(event) {
+    event.preventDefault();
 
-    if (waitingForResponse) {
-        event.preventDefault();
-        return;
-    }
+    if (isSubmitting) return;
 
-    waitingForResponse = true;
+    isSubmitting = true;
 
     submitButton.disabled = true;
     submitButton.textContent = 'Sending your response...';
 
     statusBox.style.display = 'none';
 
-    responseTimeout = setTimeout(function() {
+    const formData = new URLSearchParams(new FormData(form));
 
-        if (waitingForResponse) {
-            waitingForResponse = false;
+    const controller = new AbortController();
 
-            submitButton.disabled = false;
-            submitButton.textContent = 'Confirm my RSVP';
-
-            showStatus(
-                'We could not confirm your submission. Please try again. If you already submitted, check with the organizers before resubmitting.',
-                true
-            );
-        }
-
+    const timeout = setTimeout(function() {
+        controller.abort();
     }, 30000);
 
-});
+    try {
+        await fetch(form.action, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: formData,
+            signal: controller.signal
+        });
 
-/* Receive confirmation from Google Apps Script */
-
-window.addEventListener('message', function(event) {
-
-    if (
-        !event.data ||
-        event.data.type !== 'YOLLY_RSVP_RESULT'
-    ) {
-        return;
-    }
-
-    if (!waitingForResponse) {
-        return;
-    }
-
-    clearTimeout(responseTimeout);
-
-    waitingForResponse = false;
-
-    submitButton.disabled = false;
-    submitButton.textContent = 'Confirm my RSVP';
-
-    if (event.data.success === true) {
+        clearTimeout(timeout);
 
         showStatus(
             'Thank you! Your RSVP has been received. We look forward to celebrating with you!',
@@ -847,23 +812,28 @@ window.addEventListener('message', function(event) {
         );
 
         form.reset();
+
         document.getElementById('guests').value = '1';
 
-    } else {
+    } catch (error) {
+        clearTimeout(timeout);
 
         showStatus(
-            'Something went wrong while saving your RSVP. Please try again or contact the event organizers.',
+            'We could not send your RSVP. Please check your internet connection and try again. If you already submitted, check with the organizers before resubmitting.',
             true
         );
 
-    }
+    } finally {
+        isSubmitting = false;
 
+        submitButton.disabled = false;
+        submitButton.textContent = 'Confirm my RSVP';
+    }
 });
 
 /* Display form messages */
 
 function showStatus(message, isError) {
-
     statusBox.textContent = message;
     statusBox.className = isError ? 'error' : '';
     statusBox.style.display = 'block';
@@ -872,26 +842,19 @@ function showStatus(message, isError) {
         behavior: 'smooth',
         block: 'nearest'
     });
-
 }
 
 /* Handle attendance selection */
 
 document.getElementById('attendance').addEventListener('change', function() {
-
     const guests = document.getElementById('guests');
-
-    // Keep the field enabled so it is always submitted.
-    // Apps Script will record zero guests for non-attending responses.
 
     guests.disabled = false;
 
     if (this.value === 'Not attending') {
         guests.value = '1';
     }
-
 });
-
 </script>
 
 </body>
